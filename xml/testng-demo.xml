@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite">
+  <test name="selenium2">
+    <!--并发 并发级别-->
+    <classes>
+      <class name="com.testng.TestngDemo1">
+       <!--
+        <methods>
+          <include name="test3"/>
+        </methods>
+       -->
+      </class> <!-- com.selenium.day2.Actions2Test -->
+    </classes>
+  </test> <!-- selenium2 -->
+</suite> <!-- Default Suite -->
