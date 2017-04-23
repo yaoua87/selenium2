@@ -45,30 +45,36 @@ public class TaskTest {
     }
 
     /**
-     * 下载文件
+     * 下载文件到桌面
      */
     @Test
     public void downLoadFile() throws AWTException, InterruptedException {
 
         driver.get("http://rj.baidu.com/");
 
-        JavascriptExecutor jse = (JavascriptExecutor)driver;
-//        jse.executeScript("");
         WebElement element = driver.findElement(By.xpath(".//*[@id='mainContent']/div[1]/dl[1]/dd[1]/div[1]/ul[1]/li[1]/a[3]"));
-//        element.click();
         Actions action = new Actions(driver);
         Thread.sleep(3000);
         action.moveToElement(element).perform();
         Thread.sleep(3000);
-        element.click();
+        action.click(element).perform();
         Thread.sleep(3000);
-//
-//        Robot robot = new Robot();
-//        Thread.sleep(3000);
-//        robot.keyPress(KeyEvent.VK_K);
-//
-//        Thread.sleep(3000);
 
+        Robot rob = new Robot();
+        for(int i = 1;   i< 8 ;i++){
+            rob.keyPress(KeyEvent.VK_TAB);//切换到桌面
+            Thread.sleep(3000);
+        }
+        rob.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(3000);
+        rob.keyPress(KeyEvent.VK_ENTER);
+        Thread.sleep(3000);
+
+        for(int i = 1; i< 6 ;i++){
+            rob.keyPress(KeyEvent.VK_TAB);//切换到保存按钮
+            Thread.sleep(3000);
+        }
+        rob.keyPress(KeyEvent.VK_ENTER);
     }
 
     /**
@@ -83,6 +89,6 @@ public class TaskTest {
 
     @AfterMethod
     public  void quitChrome(){
-//        driver.quit();
+        driver.quit();
     }
 }
