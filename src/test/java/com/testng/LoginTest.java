@@ -1,5 +1,6 @@
 package com.testng;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -14,6 +15,8 @@ public class LoginTest {
 
     @Test
     public void loginError(){
+        System.out.printf("this is error====================");
+        Assert.assertTrue(false);
 
     }
 }
